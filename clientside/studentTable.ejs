@@ -2,7 +2,7 @@
     <center>
     <h1>Student</h1>
     </center>
-      <title>HTML Tables</title>
+      <title>Student Tables</title>
 
       <style >
           th{
@@ -30,7 +30,17 @@
             <th>Branch</th>
             <th>Semester</th>
          </tr>
-         {% student_table %}
+         <% for(let i=0; i<data.length; i++){ %>
+         <tr>
+            <td><%= data[i].name %></td>
+            <td><%= data[i].SRN %></td>
+            <td><%= data[i].email %></td>
+            <td><%= data[i].mobile_number %></td>
+            <td><%= data[i].Branch %></td>
+            <td><%= data[i].semester %></td>
+            
+         </tr>
+         <% } %>
      
       </table>
   </center>

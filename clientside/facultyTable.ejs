@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+    <center>
+    <h1>Faculty</h1>
+    </center>
+      <title>Faculty Tables</title>
+
+      <style >
+          th{
+            margin: 5px;
+            padding: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            min-width: 150px;
+          }
+          td{
+            margin: 2px;
+            font-size: medium;
+          }
+          table{
+            margin: 30px ;
+          }
+      </style>
+   </head>
+    
+   <body>
+    <center>
+      <table border = "1">
+         <tr>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Mob.no</th>
+            <th>Associated Branch</th>
+         </tr>
+         <% for(let i=0; i<data.length; i++){ %>
+         <tr>
+            <td><%= data[i].name %></td>
+            <td><%= data[i].id %></td>
+            <td><%= data[i].email %></td>
+            <td><%= data[i].mobile_number %></td>
+            <td><%= data[i].associated_branch %></td>
+         </tr>
+         <% } %>
+     
+      </table>
+  </center>
+      
+   </body>
+</html>

@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const {students, faculty} = require('./modules/models')
+const ejs = require('ejs')
 
 const port = 8080 || process.env.PORT;
 
@@ -9,7 +10,8 @@ const app = express();
 app.use(express.json());
 app.use(express.static(`${__dirname}/../clientside`));
 app.use(express.urlencoded({ extended: false }));
-
+app.set('view engine', 'ejs');
+app.set('views',`${__dirname}/../clientside`)
 
 
 app.get('/', async (req, res) => {
@@ -64,15 +66,24 @@ app.post('/faculty', async (req,res) => {
     }
 })
 
-// app.get('/student_details', async (req,res) => {
-//     const student_info = fs.readFileSync(`${__dirname}/../clientside/studentTable.html`);
-//     res.writeHead(200,{
-//         'Content-type':'text/html'
-//     })
-//     const studentData = await students.find().then(data => console.log("retrived data!"))
-//     console.log(studentData)
-//     res.render(student_info, {studentData})
-// })
+app.get('/student_details', async (req,res) => {
+  
+    let data = null;
+    await students.find().then((studentData) => {
+        console.log(studentData)
+        data = studentData;
+    })
+    res.render('studentTable', {data},(err,html) => {res.end(html)}, {async:true});
+})
+
+app.get('/faculty_details', async (req,res) => {
+
+    let data = null;
+    await faculty.find().then((facultyData) => {
+        data = facultyData;
+    })
+    res.render('facultyTable', {data},(err,html) => {res.end(html)}, {async:true});
+})
 
 
 
