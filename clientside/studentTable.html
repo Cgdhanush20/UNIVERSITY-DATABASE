@@ -1,0 +1,39 @@
+<head>
+    <center>
+    <h1>Student</h1>
+    </center>
+      <title>HTML Tables</title>
+
+      <style >
+          th{
+            margin: 5px;
+            padding: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            min-width: 150px;
+
+          }
+          table{
+            margin: 30px ;
+          }
+      </style>
+   </head>
+    
+   <body>
+    <center>
+      <table border = "1">
+         <tr>
+            <th>Name</th>
+            <th>SRN</th>
+            <th>Email</th>
+            <th>Mob.no</th>
+            <th>Branch</th>
+            <th>Semester</th>
+         </tr>
+         {% student_table %}
+     
+      </table>
+  </center>
+      
+   </body>
+</html>

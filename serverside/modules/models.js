@@ -12,13 +12,13 @@ const student_Schema=new mongoose.Schema
 ({
     name:{
         type:String,
-        required:[true,'Nmae required']
+        required:[true,'Name required']
     },
     SRN:{
         type:String,
         required:[true,'SRN is must']
     },
-    moblie_number:{
+    mobile_number:{
         type:Number,
         required:[true,'phone no']
     },
