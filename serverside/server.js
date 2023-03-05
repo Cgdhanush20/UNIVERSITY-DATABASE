@@ -74,19 +74,7 @@ app.post('/faculty', async (req,res) => {
 //     res.render(student_info, {studentData})
 // })
 
-app.get('/student_details', async (req, res) => {
-    const studentData = await students.find().then(data => console.log("retrieved data!"))
-    console.log(studentData)
-    fs.readFile(`${__dirname}/../clientside/studentTable.html`, 'utf8', (err, student_info) => {
-      if (err) {
-        // handle error
-        res.status(500).send('Error reading file');
-        return;
-      }
-      res.render('studentTable', { studentData });
-    });
-  });
-  
+
 
 app.listen(port, (err) => {
     if(err) console.log("Server error: ", err);
