@@ -1,6 +1,5 @@
-
 const mongoose = require('mongoose');
-const url = "mongodb+srv://virumalex:Codeitbro@cluster0.eoylmpv.mongodb.net/?retryWrites=true&w=majority";
+const url = "mongodb+srv://cgdhanush20:codeitbro@cluster0.htxmc0y.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.set('strictQuery',false);
 
